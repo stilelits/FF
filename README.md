@@ -1,0 +1,1 @@
+This is a repository for tinkering with React, holding my source code files for a simple RPG inspired by Final Fantasy. Please note that this is not intended for commercial use, only my own education, so I believe any similarities between it and real Final Fantasy games are covered by fair use.
