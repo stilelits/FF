@@ -5,8 +5,8 @@ const END_BATTLE = "Run away!"
 
 export default class FieldEngine extends Engine {
 
- handleClick = (e) => {
-  switch(e){
+ handleClick = (val) => {
+  switch(val){
   case END_BATTLE: this.props.parent.changeState(this.props.parent.STATES.FIELD); break;
   }
  }

@@ -4,8 +4,7 @@ import Engine       from "./Engine.js";
 import FieldEngine  from "./FieldEngine.js";
 import BattleEngine from "./BattleEngine.js";
 import MenuEngine   from "./MenuEngine.js";
-
-import './EngineManager.css';
+import Unit         from "./Unit.js";
 
 export default class EngineManager extends React.Component {
 
@@ -14,6 +13,12 @@ export default class EngineManager extends React.Component {
   this.STATES = {INIT:0, FIELD:1, BATTLE:2, MENU:3};
   this.state = {current : this.STATES.INIT};
   this.engine = < Engine parent={this} />;
+  this.party = [];
+ }
+ 
+ startNewGame(){
+  this.party = [new Unit(Unit.CLASSES.FIGHTER), new Unit(Unit.CLASSES.BLACK_MAGE), new Unit(Unit.CLASSES.WHITE_MAGE)];
+  this.changeState(this.STATES.FIELD);
  }
 
  changeState = (newState) => { //console.log(newState);
@@ -28,7 +33,7 @@ export default class EngineManager extends React.Component {
  }
 
  render(){
-  return (<div>{this.engine}</div>);
+  return this.engine;
  } 
 
 }

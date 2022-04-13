@@ -4,7 +4,7 @@ export default class Button extends React.Component {
 
  render(){
   return (
-   <button onClick={() => this.props.parent.handleClick(this.props.val)}>{this.props.val}</button>
+   <button onClick={() => this.props.parent.handleClick(this.props)}>{this.props.text}</button>
   );
  } 
 

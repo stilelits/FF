@@ -7,7 +7,7 @@ const OPEN_MENU = "Open menu"
 export default class FieldEngine extends Engine {
 
  handleClick = (e) => {
-  switch(e){
+  switch(e.text){
   case TO_BATTLE: this.props.parent.changeState(this.props.parent.STATES.BATTLE); break;
   case OPEN_MENU: this.props.parent.changeState(this.props.parent.STATES.MENU);   break;
   }

@@ -5,13 +5,17 @@ const NEW_GAME = "New game"
 
 export default class Engine extends React.Component {
 
- makeButton = (val) => {
-  return <Button parent={this} val={val} />
+ makeButton (text, val = -1) {
+  if (val < 0){
+   return <Button parent={this} text={text} val={text} />;
+  } else {
+   return <Button parent={this} text={text} val={val}  />;
+  }
  }
 
  handleClick = (e) => {
-  switch(e){
-  case NEW_GAME: this.props.parent.changeState(this.props.parent.STATES.FIELD); break;
+  switch(e.text){
+  case NEW_GAME: this.props.parent.startNewGame(); break;
   }
  }
 
